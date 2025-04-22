@@ -29,7 +29,7 @@ class RequestHandlerControllerSpec extends TestSupport with MockDataService {
 
   object TestRequestHandlerController extends RequestHandlerController(mockDataService, cc)
 
-  lazy val successModel = DataModel(
+  lazy val successModel: DataModel = DataModel(
     _id = "test",
     schemaId = "testID1",
     method = "GET",
@@ -37,7 +37,7 @@ class RequestHandlerControllerSpec extends TestSupport with MockDataService {
     response = None
   )
 
-  lazy val successWithBodyModel = DataModel(
+  lazy val successWithBodyModel: DataModel = DataModel(
     _id = "test",
     schemaId = "testID2",
     method = "GET",
