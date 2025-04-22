@@ -17,7 +17,7 @@
 package repositories
 
 import helpers.TestSupport
-import org.mongodb.scala.bson.{BsonInt32, BsonInt64, BsonString}
+import org.mongodb.scala.bson.{BsonInt32, BsonString}
 import play.api.test.Helpers.{await, defaultAwaitTimeout}
 import uk.gov.hmrc.mongo.test.DefaultPlayMongoRepositorySupport
 import uk.gov.hmrc.ngrstub.common.Constants
@@ -38,7 +38,7 @@ class DataRepositorySpec extends TestSupport with DefaultPlayMongoRepositorySupp
       val ttlIndex = indexes.find(_.get("name").contains(BsonString("expiry")))
 
       ttlIndex.get("key").toString shouldBe """{"creationTimestamp": 1}"""
-      ttlIndex.get("expireAfterSeconds") shouldBe BsonInt64(Constants.timeToLiveInSeconds)
+      ttlIndex.get("expireAfterSeconds") shouldBe BsonInt32(Constants.timeToLiveInSeconds)
     }
   }
 }
