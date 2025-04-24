@@ -14,14 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.ngrstub.config
+package uk.gov.hmrc.ngrstub.models
 
-import com.google.inject.AbstractModule
-
-class Module extends AbstractModule {
-
-  override def configure(): Unit = {
-
-    bind(classOf[AppConfig]).asEagerSingleton()
-  }
+object HttpMethod {
+  val GET: String = "GET"
+  val POST: String = "POST"
+  val PUT: String = "PUT"
 }

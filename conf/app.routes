@@ -1,3 +1,5 @@
 # microservice specific routes
 
-GET        /hello-world             uk.gov.hmrc.ngrstub.controllers.MicroserviceHelloWorldController.hello
+POST        /data                                                   uk.gov.hmrc.ngrstub.controllers.SetupDataController.addData
+DELETE      /all-data                                               uk.gov.hmrc.ngrstub.controllers.SetupDataController.removeAll
+GET         /*url                                                   uk.gov.hmrc.ngrstub.controllers.RequestHandlerController.getRequestHandler(url)
