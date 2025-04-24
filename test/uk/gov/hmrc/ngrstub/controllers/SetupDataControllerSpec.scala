@@ -34,7 +34,6 @@ class SetupDataControllerSpec extends TestSupport with MockDataService {
 
     val model: DataModel = DataModel(
       _id = "1234",
-      schemaId = "2345",
       method = "GET",
       status = Status.OK,
       response = Some(Json.parse("{}"))

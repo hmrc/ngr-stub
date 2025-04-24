@@ -31,7 +31,6 @@ class RequestHandlerControllerSpec extends TestSupport with MockDataService {
 
   lazy val successModel: DataModel = DataModel(
     _id = "test",
-    schemaId = "testID1",
     method = "GET",
     status = Status.OK,
     response = None
@@ -39,7 +38,6 @@ class RequestHandlerControllerSpec extends TestSupport with MockDataService {
 
   lazy val successWithBodyModel: DataModel = DataModel(
     _id = "test",
-    schemaId = "testID2",
     method = "GET",
     status = Status.OK,
     response = Some(Json.parse("""{"something" : "hello"}"""))

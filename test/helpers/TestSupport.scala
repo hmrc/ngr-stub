@@ -40,7 +40,7 @@ trait TestSupport extends AnyWordSpec with GuiceOneAppPerSuite
 
   lazy val cc: ControllerComponents = stubControllerComponents()
 
-  val dataModel: DataModel = DataModel("/test", "testSchema", "GET", 200, response = Some(Json.parse("{}")) )
+  val dataModel: DataModel = DataModel("/test", "GET", 200, response = Some(Json.parse("{}")) )
 
 
 }

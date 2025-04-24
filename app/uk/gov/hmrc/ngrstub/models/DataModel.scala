@@ -21,7 +21,6 @@ import uk.gov.hmrc.mongo.play.json.formats.MongoJavatimeFormats
 import java.time.Instant
 
 case class DataModel(_id: String,
-                     schemaId: String,
                      method: String,
                      status: Int,
                      response: Option[JsValue])
@@ -35,7 +34,6 @@ object DataModel {
     Writes[DataModel] { model =>
       JsObject(Json.obj(
         "_id" -> model._id,
-        "schemaId" -> model.schemaId,
         "method" -> model.method,
         "status" -> model.status,
         "response" -> model.response,
