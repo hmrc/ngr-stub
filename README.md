@@ -49,7 +49,6 @@ Response codes:
 ```
 {
   "_id": "/ratepayer/12345",
-  "schemaId": "getRatePayer",
   "method": "GET",
   "status": 200,
   "response": {
@@ -59,7 +58,6 @@ Response codes:
 ```
 
 * `_id` - the URL
-* `schemaId` - the unique ID that must match a schema populated in the stub
 * `method` - the HTTP method for the API request
 * `status` - the status code returned by the API
 * `response` - the JSON body returned by the API (optional)
