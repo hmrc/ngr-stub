@@ -17,6 +17,7 @@
 package uk.gov.hmrc.ngrstub.controllers
 
 import helpers.TestSupport
+import play.api.libs.json.Json
 import play.api.test.FakeRequest
 import play.api.test.Helpers.{defaultAwaitTimeout, status}
 import play.mvc.Http.Status.OK
@@ -27,8 +28,16 @@ class CallbackControllerSpec extends TestSupport {
   private val callbackController = inject[CallbackController]
 
   "CallbackController" should {
-    "log the received callback and return an HTTP 200 OK response" in {
-      val result = callbackController.receivedCallback(FakeRequest("POST", "/"))
+    "log received callback with JSON body and return OK" in {
+      val result = callbackController.receivedCallback(
+        FakeRequest("POST", "/").withJsonBody(Json.obj("param" -> "value"))
+      )
+
+      status(result) shouldBe OK
+    }
+
+    "log received callback with any body and return OK" in {
+      val result = callbackController.receivedCallback(FakeRequest())
 
       status(result) shouldBe OK
     }
