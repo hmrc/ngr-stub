@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2025 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,11 +24,12 @@ import org.scalatestplus.play.guice.GuiceOneAppPerSuite
 import play.api.libs.json.Json
 import play.api.mvc.ControllerComponents
 import play.api.test.Helpers.stubControllerComponents
+import play.api.test.Injecting
 import uk.gov.hmrc.ngrstub.models.DataModel
 
 import scala.concurrent.ExecutionContext
 
-trait TestSupport extends AnyWordSpec with GuiceOneAppPerSuite
+trait TestSupport extends AnyWordSpec with GuiceOneAppPerSuite with Injecting
   with Matchers {
 
   val successWriteResult: InsertOneResult = InsertOneResult.acknowledged(BsonObjectId())
@@ -36,7 +37,7 @@ trait TestSupport extends AnyWordSpec with GuiceOneAppPerSuite
   val successDeleteResult: DeleteResult = DeleteResult.acknowledged(1)
   val errorDeleteResult: DeleteResult = DeleteResult.unacknowledged()
 
-  implicit val ec: ExecutionContext = app.injector.instanceOf[ExecutionContext]
+  implicit val ec: ExecutionContext = inject[ExecutionContext]
 
   lazy val cc: ControllerComponents = stubControllerComponents()
 
