@@ -3,6 +3,8 @@
 GET        /callback                                                uk.gov.hmrc.ngrstub.controllers.CallbackController.receivedCallback
 POST       /callback                                                uk.gov.hmrc.ngrstub.controllers.CallbackController.receivedCallback
 
+GET        /ratepayer-status/:id                                    uk.gov.hmrc.ngrstub.controllers.StatusController.ratepayerStatus(id: String)
+
 POST        /data                                                   uk.gov.hmrc.ngrstub.controllers.SetupDataController.addData
 DELETE      /all-data                                               uk.gov.hmrc.ngrstub.controllers.SetupDataController.removeAll
 GET         /*url                                                   uk.gov.hmrc.ngrstub.controllers.RequestHandlerController.getRequestHandler(url)
