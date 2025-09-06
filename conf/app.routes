@@ -8,3 +8,5 @@ GET        /ratepayer-status/:id                                    uk.gov.hmrc.
 POST        /data                                                   uk.gov.hmrc.ngrstub.controllers.SetupDataController.addData
 DELETE      /all-data                                               uk.gov.hmrc.ngrstub.controllers.SetupDataController.removeAll
 GET         /*url                                                   uk.gov.hmrc.ngrstub.controllers.RequestHandlerController.getRequestHandler(url)
+POST        /*url                                                   uk.gov.hmrc.ngrstub.controllers.RequestHandlerController.postRequestHandler(url)
+PUT         /*url                                                   uk.gov.hmrc.ngrstub.controllers.RequestHandlerController.putRequestHandler(url)
