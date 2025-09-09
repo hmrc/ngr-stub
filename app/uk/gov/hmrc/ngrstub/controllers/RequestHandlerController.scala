@@ -28,27 +28,27 @@ import scala.concurrent.ExecutionContext
 
 
 @Singleton
-class RequestHandlerController  @Inject()(DataRepository: DataService,
-                                          cc: ControllerComponents)(implicit ec: ExecutionContext) extends BackendController(cc) {
+class RequestHandlerController @Inject()(DataRepository: DataService,
+                                         cc: ControllerComponents)(implicit ec: ExecutionContext) extends BackendController(cc) {
 
-  def getRequestHandler(url: String): Action[AnyContent] = Action.async {
-    implicit request => {
-      val logger = Logger(this.getClass)
-      logger.info(s"Received request URI: ${request.uri}")
-      DataRepository.find(Seq("_id" -> request.uri, "method" -> GET)).map {
-        case head :: _ if head.response.nonEmpty => Status(head.status)(head.response.get)
-        case head :: _ => Status(head.status)
-        case _ => NotFound(errorResponseBody)
-      }
+  def getRequestHandler(url: String): Action[AnyContent] = requestHandler(GET)
+
+  def postRequestHandler(url: String): Action[AnyContent] = requestHandler(POST)
+
+  def putRequestHandler(url: String): Action[AnyContent] = requestHandler(PUT)
+
+  private def requestHandler(method: String): Action[AnyContent] = Action.async { request =>
+    val logger = Logger(this.getClass)
+    logger.info(s"Received request URI: ${request.uri}")
+    DataRepository.find(Seq("_id" -> request.uri, "method" -> method)).map {
+      case head :: _ => head.response.map(Status(head.status)(_)).getOrElse(Status(head.status))
+      case _ => NotFound(errorResponseBody)
     }
   }
 
-
-
-  val errorResponseBody: JsValue = Json.obj(
+  private val errorResponseBody: JsValue = Json.obj(
     "code" -> "NOT_FOUND",
     "reason" -> "No data exists for this request."
   )
-
 
 }

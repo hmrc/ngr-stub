@@ -18,12 +18,11 @@ package uk.gov.hmrc.ngrstub.controllers
 
 import helpers.TestSupport
 import mocks.MockDataService
-import uk.gov.hmrc.ngrstub.models.DataModel
-import play.mvc.Http.Status
+import play.api.http.Status.{ACCEPTED, CREATED, NOT_FOUND, OK}
 import play.api.libs.json.Json
 import play.api.test.FakeRequest
-import play.api.test.Helpers.{contentAsString, status}
-import play.api.test.Helpers.defaultAwaitTimeout
+import play.api.test.Helpers.{contentAsString, defaultAwaitTimeout, status}
+import uk.gov.hmrc.ngrstub.models.DataModel
 
 class RequestHandlerControllerSpec extends TestSupport with MockDataService {
 
@@ -32,17 +31,30 @@ class RequestHandlerControllerSpec extends TestSupport with MockDataService {
   lazy val successModel: DataModel = DataModel(
     _id = "test",
     method = "GET",
-    status = Status.OK,
+    status = OK,
     response = None
   )
 
   lazy val successWithBodyModel: DataModel = DataModel(
     _id = "test",
     method = "GET",
-    status = Status.OK,
+    status = OK,
     response = Some(Json.parse("""{"something" : "hello"}"""))
   )
 
+  lazy val successPOSTModel: DataModel = DataModel(
+    _id = "test",
+    method = "POST",
+    status = CREATED,
+    response = None
+  )
+
+  lazy val successPUTModel: DataModel = DataModel(
+    _id = "test",
+    method = "PUT",
+    status = ACCEPTED,
+    response = None
+  )
 
   "The getRequestHandler method" should {
 
@@ -50,23 +62,37 @@ class RequestHandlerControllerSpec extends TestSupport with MockDataService {
       lazy val result = TestRequestHandlerController.getRequestHandler("/test")(FakeRequest())
 
       mockFind(List(successModel))
-      status(result) shouldBe Status.OK
+      status(result) shouldBe OK
     }
 
     "return the status and body" in {
       lazy val result = TestRequestHandlerController.getRequestHandler("/test")(FakeRequest())
 
       mockFind(List(successWithBodyModel))
-      status(result) shouldBe Status.OK
+      status(result) shouldBe OK
       contentAsString(result) shouldBe s"${successWithBodyModel.response.get}"
+    }
+
+    "return the status code specified for POST model" in {
+      lazy val result = TestRequestHandlerController.postRequestHandler("/test")(FakeRequest())
+
+      mockFind(List(successPOSTModel))
+      status(result) shouldBe CREATED
+    }
+
+    "return the status code specified for PUT model" in {
+      lazy val result = TestRequestHandlerController.putRequestHandler("/test")(FakeRequest())
+
+      mockFind(List(successPUTModel))
+      status(result) shouldBe ACCEPTED
     }
 
     "return a 404 status when the endpoint cannot be found" in {
       lazy val result = TestRequestHandlerController.getRequestHandler("/test")(FakeRequest())
 
       mockFind(List())
-      status(result) shouldBe Status.NOT_FOUND
+      status(result) shouldBe NOT_FOUND
     }
   }
-}
 
+}
