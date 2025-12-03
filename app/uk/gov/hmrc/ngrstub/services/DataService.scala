@@ -42,9 +42,6 @@ class DataService @Inject()(mongoComponent: MongoComponent)(implicit ec: Executi
   def find(query: Seq[(String, String)]): Future[Seq[DataModel]] = {
     val filters = query.map {
       case ("_id", uri) =>
-        // Match any stub in DB where _id may contain *, against the incoming URI
-        // We cannot just quote the URI; we need regex in the DB query
-        // The stored _id can contain "*", so convert * → .*
         regex("_id", uri.replace("*", ".*"))
       case (key, value) =>
         equal(key, value)
