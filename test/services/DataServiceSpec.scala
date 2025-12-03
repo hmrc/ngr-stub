@@ -80,5 +80,27 @@ class DataServiceSpec extends TestSupport with DefaultPlayMongoRepositorySupport
     "contain a DataRepository" in {
       service.repository.getClass shouldBe repository.getClass
     }
+
+    "find documents with no filters" in {
+      await(service.addEntry(dataModel))
+
+      val result = await(service.find(Seq.empty))
+      result should contain theSameElementsAs List(dataModel)
+    }
+
+    "find documents with a single filter" in {
+      await(service.addEntry(dataModel))
+      val result = await(service.find(Seq("_id" -> "/test")))
+      result shouldBe List(dataModel)
+    }
+
+    "find documents with multiple filters" in {
+      val multiDoc = DataModel(_id = "/multi", method = "GET", status = 200, response = None)
+      await(service.addEntry(dataModel))
+      await(service.addEntry(multiDoc))
+
+      val result = await(service.find(Seq("_id" -> "/test", "method" -> "GET")))
+      result shouldBe List(dataModel)
+    }
   }
 }
