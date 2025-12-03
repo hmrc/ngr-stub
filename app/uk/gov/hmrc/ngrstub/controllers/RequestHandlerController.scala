@@ -19,7 +19,6 @@ package uk.gov.hmrc.ngrstub.controllers
 import play.api.Logger
 import play.api.libs.json.{JsValue, Json}
 import play.api.mvc.{Action, AnyContent, ControllerComponents}
-import uk.gov.hmrc.ngrstub.models.HttpMethod._
 import uk.gov.hmrc.ngrstub.services.DataService
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
 
@@ -28,21 +27,26 @@ import scala.concurrent.ExecutionContext
 
 
 @Singleton
-class RequestHandlerController @Inject()(DataRepository: DataService,
-                                         cc: ControllerComponents)(implicit ec: ExecutionContext) extends BackendController(cc) {
+class RequestHandlerController @Inject()(
+                                          dataService: DataService,
+                                          cc: ControllerComponents
+                                        )(implicit ec: ExecutionContext) extends BackendController(cc) {
 
-  def getRequestHandler(url: String): Action[AnyContent] = requestHandler(GET)
-
-  def postRequestHandler(url: String): Action[AnyContent] = requestHandler(POST)
-
-  def putRequestHandler(url: String): Action[AnyContent] = requestHandler(PUT)
+  def getRequestHandler(url: String): Action[AnyContent] = requestHandler("GET")
+  def postRequestHandler(url: String): Action[AnyContent] = requestHandler("POST")
+  def putRequestHandler(url: String): Action[AnyContent] = requestHandler("PUT")
 
   private def requestHandler(method: String): Action[AnyContent] = Action.async { request =>
     val logger = Logger(this.getClass)
     logger.info(s"Received request URI: ${request.uri}")
-    DataRepository.find(Seq("_id" -> request.uri, "method" -> method)).map {
-      case head :: _ => head.response.map(Status(head.status)(_)).getOrElse(Status(head.status))
-      case _ => NotFound(errorResponseBody)
+
+    dataService.find(Seq("_id" -> request.uri, "method" -> method)).map { results =>
+      results.headOption match {
+        case Some(head) =>
+          head.response.map(Status(head.status)(_)).getOrElse(Status(head.status))
+        case None =>
+          NotFound(errorResponseBody)
+      }
     }
   }
 
@@ -50,5 +54,4 @@ class RequestHandlerController @Inject()(DataRepository: DataService,
     "code" -> "NOT_FOUND",
     "reason" -> "No data exists for this request."
   )
-
 }
