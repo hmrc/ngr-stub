@@ -17,10 +17,8 @@
 package uk.gov.hmrc.ngrstub.services
 
 
-import org.mongodb.scala.bson.BsonString
-import org.mongodb.scala.bson.collection.immutable.Document
 import org.mongodb.scala.result.{DeleteResult, InsertOneResult}
-import org.mongodb.scala.model.Filters.{and, equal}
+import org.mongodb.scala.model.Filters.{equal, and, regex}
 import uk.gov.hmrc.mongo.MongoComponent
 import uk.gov.hmrc.ngrstub.models.DataModel
 import uk.gov.hmrc.ngrstub.repositories.DataRepository
@@ -42,16 +40,13 @@ class DataService @Inject()(mongoComponent: MongoComponent)(implicit ec: Executi
     repository.collection.insertOne(document).toFuture()
 
   def find(query: Seq[(String, String)]): Future[Seq[DataModel]] = {
-    val filters = query.map { case (key, value) =>
-      if (key == "_id") equal(key, BsonString(value)) else equal(key, value)
+    val filters = query.map {
+      case ("_id", uri) =>
+        regex("_id", uri.replace("*", ".*"))
+      case (key, value) =>
+        equal(key, value)
     }
 
-    val finalFilter = filters match {
-      case Nil          => Document()      // match everything if no filters
-      case head :: Nil  => head            // single filter
-      case _            => and(filters: _*) // multiple filters
-    }
-
-    repository.collection.find(finalFilter).toFuture()
+    repository.collection.find(and(filters: _*)).toFuture()
   }
 }
