@@ -18,7 +18,7 @@ package uk.gov.hmrc.ngrstub.services
 
 
 import org.mongodb.scala.result.{DeleteResult, InsertOneResult}
-import org.mongodb.scala.model.Filters.{and, empty, equal}
+import org.mongodb.scala.model.Filters.{equal, and, regex}
 import uk.gov.hmrc.mongo.MongoComponent
 import uk.gov.hmrc.ngrstub.models.DataModel
 import uk.gov.hmrc.ngrstub.repositories.DataRepository
@@ -30,14 +30,26 @@ class DataService @Inject()(mongoComponent: MongoComponent)(implicit ec: Executi
 
   lazy val repository: DataRepository = new DataRepository(mongoComponent)
 
-  def removeAll(): Future[DeleteResult] = repository.collection.deleteMany(empty()).toFuture()
+  def removeAll(): Future[DeleteResult] =
+    repository.collection.deleteMany(org.mongodb.scala.model.Filters.empty()).toFuture()
 
-  def removeById(url: String): Future[DeleteResult] = repository.collection.deleteOne(equal("_id", url)).toFuture()
+  def removeById(url: String): Future[DeleteResult] =
+    repository.collection.deleteOne(equal("_id", url)).toFuture()
 
-  def addEntry(document: DataModel): Future[InsertOneResult] = repository.collection.insertOne(document).toFuture()
+  def addEntry(document: DataModel): Future[InsertOneResult] =
+    repository.collection.insertOne(document).toFuture()
 
   def find(query: Seq[(String, String)]): Future[Seq[DataModel]] = {
-    val terms = query.map(q => equal(q._1, q._2))
-    repository.collection.find(and(terms:_*)).toFuture()
+    val filters = query.map {
+      case ("_id", uri) =>
+        // Match any stub in DB where _id may contain *, against the incoming URI
+        // We cannot just quote the URI; we need regex in the DB query
+        // The stored _id can contain "*", so convert * → .*
+        regex("_id", uri.replace("*", ".*"))
+      case (key, value) =>
+        equal(key, value)
+    }
+
+    repository.collection.find(and(filters: _*)).toFuture()
   }
 }

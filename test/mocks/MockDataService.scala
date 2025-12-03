@@ -48,5 +48,4 @@ trait MockDataService extends TestSupport with MockFactory {
     (mockDataService.addEntry(_: DataModel))
       .expects(*)
       .returning(Future.successful(response))
-
 }

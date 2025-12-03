@@ -17,6 +17,7 @@
 package services
 
 import helpers.TestSupport
+import org.mongodb.scala.bson.Document
 import play.api.test.Helpers.{await, defaultAwaitTimeout}
 import uk.gov.hmrc.mongo.test.DefaultPlayMongoRepositorySupport
 import uk.gov.hmrc.ngrstub.models.DataModel
@@ -29,6 +30,23 @@ class DataServiceSpec extends TestSupport with DefaultPlayMongoRepositorySupport
   lazy val service = new DataService(mongoComponent)
 
   "DataService" should {
+
+    "find documents using equal(key, value) branch" in {
+      val document = DataModel(
+        _id = "/some-other",
+        method = "GET",
+        status = 200,
+        response = None
+      )
+
+      await(service.addEntry(document))
+
+      await(service.repository.collection.createIndex(Document("method" -> 1)).toFuture())
+
+      val result = await(service.find(Seq("method" -> "GET")))
+
+      result should contain(document)
+    }
 
     "find matching documents in the collection" in {
       val result = {
