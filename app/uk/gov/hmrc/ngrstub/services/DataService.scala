@@ -40,13 +40,7 @@ class DataService @Inject()(mongoComponent: MongoComponent)(implicit ec: Executi
     repository.collection.insertOne(document).toFuture()
 
   def find(query: Seq[(String, String)]): Future[Seq[DataModel]] = {
-    val filters = query.map {
-      case ("_id", uri) =>
-        regex("_id", uri.replace("*", ".*"))
-      case (key, value) =>
-        equal(key, value)
-    }
-
+    val filters = query.collect { case (key, value) if key != "_id" => equal(key, value) }
     repository.collection.find(and(filters: _*)).toFuture()
   }
 }
