@@ -42,25 +42,39 @@ class DataService @Inject()(mongoComponent: MongoComponent)(implicit ec: Executi
 
   def find(query: Seq[(String, String)]): Future[Seq[DataModel]] = {
     println(s"query: $query")
-    val filters = query.map { case (key, value) =>
-      if (key == "_id") {
-        if (value.contains("*")) {
-          val regexValue = value.replace("*", ".*")
-          regex("_id", regexValue)
-        } else {
-          equal("_id", value)
-        }
-      } else {
-        equal(key, value)
-      }
+
+    val exactFilters = query.map { case (key, value) =>
+      equal(key, value)
     }
 
-    val finalFilter = filters match {
+    val finalExactFilter = exactFilters match {
       case Nil          => Document()
       case head :: Nil  => head
-      case _            => and(filters: _*)
+      case _            => and(exactFilters: _*)
     }
 
-    repository.collection.find(finalFilter).toFuture()
+    repository.collection.find(finalExactFilter).toFuture().flatMap { exactResults =>
+      if (exactResults.nonEmpty) {
+        Future.successful(exactResults)
+      } else {
+        val wildcardFilters = query.map { case (key, value) =>
+          if (key == "_id") {
+            val regexValue = value.replace("*", ".*")
+            regex("_id", regexValue)
+          } else {
+            equal(key, value)
+          }
+        }
+
+        val finalWildcardFilter = wildcardFilters match {
+          case Nil          => Document()
+          case head :: Nil  => head
+          case _            => and(wildcardFilters: _*)
+        }
+
+        repository.collection.find(finalWildcardFilter).toFuture()
+      }
+    }
   }
+
 }
