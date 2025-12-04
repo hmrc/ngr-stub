@@ -18,6 +18,7 @@ package services
 
 import helpers.TestSupport
 import org.mongodb.scala.bson.Document
+import play.api.libs.json.Json
 import play.api.test.Helpers.{await, defaultAwaitTimeout}
 import uk.gov.hmrc.mongo.test.DefaultPlayMongoRepositorySupport
 import uk.gov.hmrc.ngrstub.models.DataModel
@@ -94,10 +95,31 @@ class DataServiceSpec extends TestSupport with DefaultPlayMongoRepositorySupport
       result shouldBe List(dataModel)
     }
 
+    "find documents using regex(_id, value) branch" in {
+      val wildcardDoc = DataModel(
+        _id = "/test/*/endpoint",
+        method = "GET",
+        status = 200,
+        response = Some(Json.obj("message" -> "matched"))
+      )
+
+      await(service.addEntry(wildcardDoc))
+
+      val result = await(service.find(Seq("_id" -> "/test/123/endpoint")))
+
+      result.map(_._id) should contain("/test/*/endpoint")
+      result.head.response shouldBe Some(Json.obj("message" -> "matched"))
+
+      val noMatch = await(service.find(Seq("_id" -> "/other/123/endpoint")))
+      noMatch shouldBe empty
+    }
+
     "find documents with multiple filters" in {
       val multiDoc = DataModel(_id = "/multi", method = "GET", status = 200, response = None)
       await(service.addEntry(dataModel))
       await(service.addEntry(multiDoc))
+
+      await(service.repository.collection.createIndex(Document("method" -> 1)).toFuture())
 
       val result = await(service.find(Seq("_id" -> "/test", "method" -> "GET")))
       result shouldBe List(dataModel)
