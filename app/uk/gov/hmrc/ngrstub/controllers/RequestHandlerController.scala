@@ -40,12 +40,13 @@ class RequestHandlerController @Inject()(
     val logger = Logger(this.getClass)
     logger.info(s"Received request URI: ${request.uri}")
 
-    dataService.find(Seq("method" -> method)).map { results =>
-      results.find { stub =>
-        val stubPath = if (stub._id.startsWith("/")) stub._id else "/" + stub._id
-        val pattern = stubPath.replace("*", ".*") + "$"
-        pattern.r.matches(request.uri)
-      } match {
+    val query = Seq(
+      "_id" -> request.uri,
+      "method" -> method
+    )
+
+    dataService.find(query).map { results =>
+      results.headOption match {
         case Some(hit) =>
           hit.response.map(Status(hit.status)(_)).getOrElse(Status(hit.status))
         case None =>
