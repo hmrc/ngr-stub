@@ -56,6 +56,22 @@ class DataServiceSpec extends TestSupport with DefaultPlayMongoRepositorySupport
       result shouldBe List(dataModel)
     }
 
+    "find matching documents in the collection when the URL has query params" in {
+      val result = {
+        await(service.addEntry(dataModel.copy(_id = "/test?param=*&param2=*")))
+        await(service.find(Seq("_id" -> "/test?param=value&param2=anotherValue")))
+      }
+      result shouldBe List(dataModel.copy(_id = "/test?param=*&param2=*"))
+    }
+
+    "find matching documents in the collection when the URL has path params" in {
+      val result = {
+        await(service.addEntry(dataModel.copy(_id = "/test/*")))
+        await(service.find(Seq("_id" -> "/test/112233")))
+      }
+      result shouldBe List(dataModel.copy(_id = "/test/*"))
+    }
+
     "remove one document from the collection" in {
       val result = {
         await(service.addEntry(dataModel))

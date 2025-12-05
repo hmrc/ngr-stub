@@ -42,6 +42,13 @@ class RequestHandlerControllerSpec extends TestSupport with MockDataService {
     response = Some(Json.parse("""{"something":"wildcard"}"""))
   )
 
+  lazy val wildcardModelPathParam: DataModel = DataModel(
+    _id = "/test?query1=*&query2=*",
+    method = "GET",
+    status = OK,
+    response = Some(Json.parse("""{"something":"wildcard"}"""))
+  )
+
   lazy val successWithBodyModel: DataModel = DataModel(
     _id = "/test",
     method = "GET",
@@ -89,6 +96,15 @@ class RequestHandlerControllerSpec extends TestSupport with MockDataService {
       )
       status(result) shouldBe OK
       contentAsString(result) shouldBe s"${wildcardModel.response.get}"
+    }
+
+    "return the status and body for wildcard match for query parameters" in {
+      mockFind(List(wildcardModelPathParam))
+      val result = TestRequestHandlerController.getRequestHandler("/test?query1=test&query2=test1")(
+        FakeRequest("GET", "/test?query1=test&query2=test1")
+      )
+      status(result) shouldBe OK
+      contentAsString(result) shouldBe s"${wildcardModelPathParam.response.get}"
     }
 
     "return the status code specified for POST model" in {

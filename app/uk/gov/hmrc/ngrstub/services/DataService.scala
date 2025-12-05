@@ -16,15 +16,14 @@
 
 package uk.gov.hmrc.ngrstub.services
 
-
-import org.mongodb.scala.bson.BsonString
 import org.mongodb.scala.bson.collection.immutable.Document
-import org.mongodb.scala.result.{DeleteResult, InsertOneResult}
 import org.mongodb.scala.model.Filters.{and, equal}
+import org.mongodb.scala.result.{DeleteResult, InsertOneResult}
 import uk.gov.hmrc.mongo.MongoComponent
 import uk.gov.hmrc.ngrstub.models.DataModel
 import uk.gov.hmrc.ngrstub.repositories.DataRepository
 
+import java.util.regex.Pattern
 import javax.inject.Inject
 import scala.concurrent.{ExecutionContext, Future}
 
@@ -41,17 +40,37 @@ class DataService @Inject()(mongoComponent: MongoComponent)(implicit ec: Executi
   def addEntry(document: DataModel): Future[InsertOneResult] =
     repository.collection.insertOne(document).toFuture()
 
+
   def find(query: Seq[(String, String)]): Future[Seq[DataModel]] = {
-    val filters = query.map { case (key, value) =>
-      if (key == "_id") equal(key, BsonString(value)) else equal(key, value)
+    val exactFilters = query.map { case (key, value) => equal(key, value) }
+    val finalExactFilter = exactFilters match {
+      case Nil => Document()
+      case head :: Nil => head
+      case _ => and(exactFilters: _*)
     }
 
-    val finalFilter = filters match {
-      case Nil          => Document()      // match everything if no filters
-      case head :: Nil  => head            // single filter
-      case _            => and(filters: _*) // multiple filters
-    }
+    repository.collection.find(finalExactFilter).toFuture().flatMap { exactResults =>
+      if (exactResults.nonEmpty) {
+        Future.successful(exactResults)
+      } else {
+        repository.collection.find().toFuture().map { allDocs =>
+          allDocs.filter { doc =>
+            query.forall {
+              case ("_id", queryValue) =>
 
-    repository.collection.find(finalFilter).toFuture()
+                val pattern = Pattern.compile("\\Q" + doc._id.replace("*", "\\E.*\\Q") + "\\E")
+                pattern.matcher(queryValue.replaceAll("=[^&]*", "=*")).matches()
+              case (key, value) =>
+                key match {
+                  case "method" => doc.method == value
+                  case _ => true
+                }
+            }
+          }
+        }
+      }
+    }
   }
+
+
 }

@@ -39,9 +39,25 @@ class RequestHandlerController @Inject()(
   private def requestHandler(method: String): Action[AnyContent] = Action.async { request =>
     val logger = Logger(this.getClass)
     logger.info(s"Received request URI: ${request.uri}")
-    dataService.find(Seq("_id" -> request.uri, "method" -> method)).map {
-      case head :: _ => head.response.map(Status(head.status)(_)).getOrElse(Status(head.status))
-      case _ => NotFound(errorResponseBody)
+
+    val query = Seq(
+      "_id" -> request.uri,
+      "method" -> method
+    )
+    println("")
+
+    dataService.find(query).map { results =>
+      println("=====================request.uri==========="+request.uri)
+      results.headOption match {
+        case Some(hit) =>
+          println("Found hit: " + hit)
+          println("Found hit: " + hit)
+          println("Found hit: " + hit)
+          println("Found hit: " + hit)
+          hit.response.map(Status(hit.status)(_)).getOrElse(Status(hit.status))
+        case None =>
+          NotFound(errorResponseBody)
+      }
     }
   }
 
