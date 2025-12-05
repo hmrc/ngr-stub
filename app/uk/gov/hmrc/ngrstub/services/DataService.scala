@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.ngrstub.services
 
+import org.mongodb.scala.bson.Document
 import org.mongodb.scala.model.Filters.{and, equal}
 import org.mongodb.scala.result.{DeleteResult, InsertOneResult}
 import uk.gov.hmrc.mongo.MongoComponent
@@ -56,7 +57,9 @@ class DataService @Inject()(mongoComponent: MongoComponent)(implicit ec: Executi
           allDocs.filter { doc =>
             query.forall {
               case ("_id", queryValue) =>
-                doc._id.replace("*", ".*").r.matches(queryValue)
+                val pattern = Pattern.compile("\\Q" + doc._id.replace("*", "\\E.*\\Q") + "\\E")
+                pattern.matcher(queryValue.replaceAll("=[^&]*", "=*")).matches()
+
               case (key, value) =>
                 key match {
                   case "method" => doc.method == value
