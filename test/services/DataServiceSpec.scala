@@ -118,5 +118,61 @@ class DataServiceSpec extends TestSupport with DefaultPlayMongoRepositorySupport
       val result = await(service.find(Seq("_id" -> "/test", "method" -> "GET")))
       result shouldBe List(dataModel)
     }
+
+    "find documents using wildcard fallback" in {
+      val wildcardDoc = DataModel(
+        _id = "/wildcard/*",
+        method = "GET",
+        status = 200,
+        response = None
+      )
+
+      await(service.addEntry(wildcardDoc))
+
+      val queryUri = "/wildcard/foo"
+      val result = await(service.find(Seq("_id" -> queryUri, "method" -> "GET")))
+
+      result shouldBe List(wildcardDoc)
+    }
+
+    "exact match takes precedence over wildcard" in {
+      val exactDoc = DataModel(
+        _id = "/exact/match",
+        method = "GET",
+        status = 200,
+        response = None
+      )
+      val wildcardDoc = DataModel(
+        _id = "/exact/*",
+        method = "GET",
+        status = 200,
+        response = None
+      )
+
+      await(service.addEntry(exactDoc))
+      await(service.addEntry(wildcardDoc))
+
+      val queryUri = "/exact/match"
+      val result = await(service.find(Seq("_id" -> queryUri, "method" -> "GET")))
+
+      result shouldBe List(exactDoc)
+    }
+
+    "no match returns empty" in {
+      val wildcardDoc = DataModel(
+        _id = "/some/*",
+        method = "GET",
+        status = 200,
+        response = None
+      )
+
+      await(service.addEntry(wildcardDoc))
+
+      val queryUri = "/unmatched/path"
+      val result = await(service.find(Seq("_id" -> queryUri, "method" -> "GET")))
+
+      result shouldBe empty
+    }
+
   }
 }

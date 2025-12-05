@@ -44,16 +44,10 @@ class RequestHandlerController @Inject()(
       "_id" -> request.uri,
       "method" -> method
     )
-    println("")
 
     dataService.find(query).map { results =>
-      println("=====================request.uri==========="+request.uri)
       results.headOption match {
         case Some(hit) =>
-          println("Found hit: " + hit)
-          println("Found hit: " + hit)
-          println("Found hit: " + hit)
-          println("Found hit: " + hit)
           hit.response.map(Status(hit.status)(_)).getOrElse(Status(hit.status))
         case None =>
           NotFound(errorResponseBody)
