@@ -3,7 +3,6 @@
   "method": "GET",
   "status": 200,
   "response": {
-    "jobForm": {
       "$schema": "./SCHEMA.json",
       "job": {
         "id": null,
@@ -379,6 +378,5 @@
         },
         "items": []
       }
-    }
   }
 }
