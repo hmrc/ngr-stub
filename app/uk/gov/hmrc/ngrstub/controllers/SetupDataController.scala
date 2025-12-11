@@ -17,15 +17,16 @@
 package uk.gov.hmrc.ngrstub.controllers
 
 import play.api.Logging
-import uk.gov.hmrc.ngrstub.models.DataModel
-
-import javax.inject.{Inject, Singleton}
-import scala.concurrent.{ExecutionContext, Future}
 import play.api.libs.json.{JsValue, Json}
 import play.api.mvc.{Action, AnyContent, ControllerComponents, Result}
+import uk.gov.hmrc.ngrstub.models.DataModel
 import uk.gov.hmrc.ngrstub.models.HttpMethod._
 import uk.gov.hmrc.ngrstub.services.DataService
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
+
+import java.io.File
+import javax.inject.{Inject, Singleton}
+import scala.concurrent.{ExecutionContext, Future}
 
 @Singleton
 class SetupDataController @Inject()(DataService: DataService, cc: ControllerComponents)(implicit executionContext: ExecutionContext) extends BackendController(cc) with Logging{
@@ -68,6 +69,20 @@ class SetupDataController @Inject()(DataService: DataService, cc: ControllerComp
     }
   }
 
+  val populateAllData: Action[AnyContent] = Action.async {
+
+    val stubDataDir: File = new File("conf/stubData")
+    val allData: Seq[DataModel] = loadAllDataFromDir(stubDataDir)
+
+    val insertFuture: Future[Boolean] = DataService.addMany(allData).map(_.wasAcknowledged())
+    insertFuture.map {
+      case true =>
+        Ok("All stub data added successfully.")
+      case false =>
+        InternalServerError("Failed to add all stub data.")
+    }
+  }
+
   val removeAll: Action[AnyContent] = Action.async {
     DataService.removeAll().map {
       case result if result.wasAcknowledged() => Ok("Removed All Stubbed Data")
@@ -76,5 +91,21 @@ class SetupDataController @Inject()(DataService: DataService, cc: ControllerComp
         logger.warn(s"[SetupDataController][removeAll] - $message")
         InternalServerError(message)
     }
+  }
+
+  private def loadAllDataFromDir(stubDataDir: File): Array[DataModel] = {
+    stubDataDir
+      .listFiles()
+      .filter(_.getName.endsWith(".json"))
+      .flatMap { file =>
+        val source = scala.io.Source.fromFile(file)
+        try {
+          Some(Json.parse(source.mkString).as[DataModel])
+        } catch {
+          case _: Throwable => None
+        } finally {
+          source.close()
+        }
+      }
   }
 }

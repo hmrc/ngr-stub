@@ -17,7 +17,7 @@
 package mocks
 
 import helpers.TestSupport
-import org.mongodb.scala.result.{DeleteResult, InsertOneResult}
+import org.mongodb.scala.result.{DeleteResult, InsertManyResult, InsertOneResult}
 import org.scalamock.handlers.{CallHandler0, CallHandler1}
 import org.scalamock.scalatest.MockFactory
 import uk.gov.hmrc.ngrstub.models.DataModel
@@ -46,6 +46,11 @@ trait MockDataService extends TestSupport with MockFactory {
 
   def mockAddEntry(response: InsertOneResult): CallHandler1[DataModel, Future[InsertOneResult]] =
     (mockDataService.addEntry(_: DataModel))
+      .expects(*)
+      .returning(Future.successful(response))
+
+  def mockAddMany(response: InsertManyResult): CallHandler1[Seq[DataModel], Future[InsertManyResult]] =
+    (mockDataService.addMany(_: Seq[DataModel]))
       .expects(*)
       .returning(Future.successful(response))
 }

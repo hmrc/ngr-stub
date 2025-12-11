@@ -43,6 +43,21 @@ Response codes:
 * `200` - when deletion was successful
 * `500` - when deletion was unsuccessful due to an unexpected reason
 
+
+### Populate all data 
+URLs:
+* `ngr-stub/add-all-data`
+
+Methods:
+* `POST`
+
+Request body:
+* An array of valid JSON data items (Read all JSON files in the stubData folder and insert them as a sequence into MongoDB using addMany)
+
+Response codes:
+* `200` - when population was successful
+* `500` - when population was unsuccessful due to an unexpected reason
+
 ## JSON formats
 
 ### Data
