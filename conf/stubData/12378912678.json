@@ -1,0 +1,28 @@
+{
+  "_id": "/ngr-stub/get-ratepayer/credId/12378912678",
+  "method": "GET",
+  "status": 200,
+  "response": {
+    "credId" : {
+      "value" : "12378912678"
+    },
+    "ratepayerRegistration" : {
+      "name" : {
+        "value" : "Jane Doe"
+      },
+      "email" : {
+        "value" : "user@test.com"
+      },
+      "nino" : "CS700100A",
+      "address" : {
+        "line1" : "MATHESON HOUSE",
+        "line2" : "MATHESON HOUSE",
+        "town" : "",
+        "postcode" : {
+          "value" : "TF3 4ER"
+        }
+      },
+      "isRegistered" : false
+    }
+  }
+}

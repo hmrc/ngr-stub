@@ -1,0 +1,10 @@
+{
+  "_id": "/ngr-stub/hip/job/physical",
+  "method": "POST",
+  "status": 200,
+  "response": {
+    "physical": "Response JSON TBC",
+    "status": "OK",
+    "job": "Accepted"
+  }
+}

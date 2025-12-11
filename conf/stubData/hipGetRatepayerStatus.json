@@ -1,0 +1,10 @@
+{
+  "_id": "/ngr-stub/hip/voa/v1/job/ratepayers/*/dashboard",
+  "method": "GET",
+  "status": 200,
+  "response": {
+    "activeRatepayerPersonExists": true,
+    "activeRatepayerPersonaExists": true,
+    "activePropertyLinkCount": 1
+  }
+}

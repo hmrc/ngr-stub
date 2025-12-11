@@ -1,0 +1,44 @@
+{
+  "_id": "/ngr-stub/get-property-linking-user-answers/credId/9900000000000101",
+  "method": "GET",
+  "status": 200,
+  "response": {
+    "credId" : {
+      "value" : "9900000000000101"
+    },
+    "vmvProperty" :{
+      "uarn" : 11905603002,
+      "addressFull" : "Bug Me Stub LTD, RODLEY LANE, RODLEY, LEEDS, BH1 1HU",
+      "localAuthorityCode" : "4720",
+      "localAuthorityReference" : "5191322564521",
+      "valuations" : [
+        {
+          "assessmentStatus" : "CURRENT",
+          "assessmentRef" : 29775650000,
+          "rateableValue" : 109300,
+          "scatCode" : "420",
+          "currentFromDate" : "2026-04-01",
+          "effectiveDate" : "2026-04-01",
+          "descriptionText" : "Lifeboat Station",
+          "listYear" : "2026",
+          "primaryDescription" : "CS",
+          "allowedActions" : [
+            "viewDetailedValuation",
+            "propertyLink",
+            "similarProperties",
+            "enquiry",
+            "businessRatesEstimator"
+          ],
+          "propertyLinkEarliestStartDate" : "2017-04-01",
+          "listType" : "draft"
+        }
+      ]
+    },
+    "currentRatepayer" : {
+      "isBeforeApril" : true
+    },
+    "businessRatesBill" : "Yes",
+    "connectionToProperty" : "Owner",
+    "evidenceDocument" : "Avatar.png"
+  }
+}

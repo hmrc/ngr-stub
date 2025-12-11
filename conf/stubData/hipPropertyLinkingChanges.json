@@ -1,0 +1,10 @@
+{
+  "_id": "/ngr-stub/hip/voa/v1/job/property",
+  "method": "POST",
+  "status": 200,
+  "response": {
+    "physical": "Response JSON TBC",
+    "status": "OK",
+    "job": "Accepted"
+  }
+}

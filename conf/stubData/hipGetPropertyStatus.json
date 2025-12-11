@@ -1,0 +1,10 @@
+{
+  "_id": "/ngr-stub/hip-ratepayer-status/testCred123",
+  "method": "GET",
+  "status": 200,
+  "response": {
+    "activeRatepayerPersonExists": true,
+    "activeRatepayerPersonaExists": true,
+    "activePropertyLinkCount": 1
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "_id": "/ngr-stub/get-ratepayer/credId/99999",
+  "method": "GET",
+  "status": 200,
+  "response": {
+    "credId" : {
+      "value" : "99999"
+    },
+    "ratepayerRegistration" : {
+      "name" : {
+        "value" : "ANNA JONES"
+      },
+      "email" : {
+        "value" : "annaemail@email.com"
+      },
+      "nino" : "AA000003D",
+      "contactNumber" : {
+        "value" : "07703245432"
+      },
+      "address" : {
+        "line1" : "11 Test Street",
+        "line2" : "Testtown",
+        "town" : "",
+        "postcode" : {
+          "value" : "FX97 4TU"
+        }
+      },
+      "trnReferenceNumber" : {
+        "referenceType" : "SAUTR",
+        "value" : "1097133333"
+      },
+      "isRegistered" : true
+    }
+  }
+}
