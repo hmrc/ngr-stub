@@ -1,0 +1,31 @@
+{
+  "_id": "/ngr-stub/get-ratepayer/credId/1237891256",
+  "method": "GET",
+  "status": 200,
+  "response": {
+    "credId" : {
+      "value" : "1237891256"
+    },
+    "ratepayerRegistration" : {
+      "name" : {
+        "value" : "Emily Davis"
+      },
+      "email" : {
+        "value" : "66666666email@email.com"
+      },
+      "contactNumber": {
+        "value": "07386472577"
+      },
+      "nino" : "CS700100A",
+      "address" : {
+        "line1" : "MATHESON HOUSE",
+        "line2" : "MATHESON HOUSE",
+        "town" : "",
+        "postcode" : {
+          "value" : "TF3 4ER"
+        }
+      },
+      "isRegistered" : false
+    }
+  }
+}

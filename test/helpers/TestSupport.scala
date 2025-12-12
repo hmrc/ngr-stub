@@ -16,8 +16,8 @@
 
 package helpers
 
-import com.mongodb.client.result.{DeleteResult, InsertOneResult}
-import org.mongodb.scala.bson.BsonObjectId
+import com.mongodb.client.result.{DeleteResult, InsertManyResult, InsertOneResult}
+import org.mongodb.scala.bson.{BsonInt32, BsonObjectId, BsonValue}
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 import org.scalatestplus.play.guice.GuiceOneAppPerSuite
@@ -34,6 +34,12 @@ trait TestSupport extends AnyWordSpec with GuiceOneAppPerSuite with Injecting
 
   val successWriteResult: InsertOneResult = InsertOneResult.acknowledged(BsonObjectId())
   val errorWriteResult: InsertOneResult = InsertOneResult.unacknowledged()
+  val successManyWriteResult: InsertManyResult = InsertManyResult.acknowledged(
+    new java.util.HashMap[Integer, BsonValue] {
+      Integer.valueOf(1) -> new BsonInt32(32)
+    }
+  )
+  val errorManyWriteResult: InsertManyResult = InsertManyResult.unacknowledged()
   val successDeleteResult: DeleteResult = DeleteResult.acknowledged(1)
   val errorDeleteResult: DeleteResult = DeleteResult.unacknowledged()
 
@@ -41,7 +47,7 @@ trait TestSupport extends AnyWordSpec with GuiceOneAppPerSuite with Injecting
 
   lazy val cc: ControllerComponents = stubControllerComponents()
 
-  val dataModel: DataModel = DataModel("/test", "GET", 200, response = Some(Json.parse("{}")) )
+  val dataModel: DataModel = DataModel("/test", "GET", 200, response = Some(Json.parse("{}")))
 
 
 }

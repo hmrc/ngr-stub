@@ -1,0 +1,10 @@
+{
+  "_id": "/ngr-stub/hip/job/ratepayer",
+  "method": "POST",
+  "status": 200,
+  "response": {
+    "registration-ratepayer": "Response JSON TBC",
+    "status": "OK",
+    "job": "Accepted"
+  }
+}

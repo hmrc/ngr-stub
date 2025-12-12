@@ -1,0 +1,13 @@
+{
+  "_id": "/ngr-stub/get-ratepayer/credId/1237891267812",
+  "method": "GET",
+  "status": 200,
+  "response": {
+    "credId" : {
+      "value" : "1237891267812"
+    },
+    "ratepayerRegistration" : {
+
+    }
+  }
+}

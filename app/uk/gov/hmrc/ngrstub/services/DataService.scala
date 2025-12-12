@@ -18,7 +18,7 @@ package uk.gov.hmrc.ngrstub.services
 
 import org.mongodb.scala.bson.Document
 import org.mongodb.scala.model.Filters.{and, equal}
-import org.mongodb.scala.result.{DeleteResult, InsertOneResult}
+import org.mongodb.scala.result.{DeleteResult, InsertManyResult, InsertOneResult}
 import uk.gov.hmrc.mongo.MongoComponent
 import uk.gov.hmrc.ngrstub.models.DataModel
 import uk.gov.hmrc.ngrstub.repositories.DataRepository
@@ -40,6 +40,8 @@ class DataService @Inject()(mongoComponent: MongoComponent)(implicit ec: Executi
   def addEntry(document: DataModel): Future[InsertOneResult] =
     repository.collection.insertOne(document).toFuture()
 
+  def addMany(document: Seq[DataModel]): Future[InsertManyResult] =
+    repository.collection.insertMany(document).toFuture()
 
   def find(query: Seq[(String, String)]): Future[Seq[DataModel]] = {
     val exactFilters = query.map { case (key, value) => equal(key, value) }

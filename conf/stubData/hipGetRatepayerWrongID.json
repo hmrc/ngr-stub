@@ -1,0 +1,19 @@
+{
+  "_id": "/ngr-stub/hip/job/ratepayer/1234567891255",
+  "method": "GET",
+  "status": 400,
+  "response": {
+    "origin": "HoD",
+    "response": {
+      "origin": "HIP",
+      "response": {
+        "failures": [
+          {
+            "type": "id",
+            "reason": "Invalid format for Id"
+          }
+        ]
+      }
+    }
+  }
+}

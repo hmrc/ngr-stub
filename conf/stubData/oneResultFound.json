@@ -1,0 +1,1216 @@
+{
+  "_id": "/ngr-stub/external-ndr-list-api/properties?postcode=BH1",
+  "method": "GET",
+  "status": 200,
+  "response": {
+    "total": 18,
+    "properties": [
+      {
+        "uarn": 11905603001,
+        "addressFull": "Capgemini UK, Phoenix, Grange Central, Telford, BH1 1HU",
+        "localAuthorityCode": "4720",
+        "localAuthorityReference": "9191322564521",
+        "valuations": [
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 40351392008,
+            "rateableValue": 7300,
+            "scatCode": "249",
+            "currentFromDate": "2019-02-12",
+            "effectiveDate": "2018-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2017",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "previous"
+          },
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 25141561000,
+            "rateableValue": 9300,
+            "scatCode": "249",
+            "currentFromDate": "2023-04-01",
+            "effectiveDate": "2023-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2023",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "check",
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "current"
+          },
+          {
+            "assessmentStatus": "DONE",
+            "assessmentRef": 29775650001,
+            "rateableValue": 509300,
+            "scatCode": "109",
+            "currentFromDate": "2026-04-01",
+            "effectiveDate": "2026-04-01",
+            "descriptionText": "GOLF",
+            "listYear": "2026",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties",
+              "enquiry",
+              "businessRatesEstimator"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "draft"
+          }
+        ]
+      },
+      {
+        "uarn": 11905603002,
+        "addressFull": "Bug Me Not PVT LTD, RODLEY LANE, RODLEY, LEEDS, BH1 1HU",
+        "localAuthorityCode": "4720",
+        "localAuthorityReference": "5191322564521",
+        "valuations": [
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 20351392001,
+            "rateableValue": 7300,
+            "scatCode": "249",
+            "currentFromDate": "2019-02-12",
+            "effectiveDate": "2018-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2017",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "previous"
+          },
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 25141561000,
+            "rateableValue": 9300,
+            "scatCode": "249",
+            "currentFromDate": "2023-04-01",
+            "effectiveDate": "2023-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2023",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "check",
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "current"
+          },
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 29775650000,
+            "rateableValue": 109300,
+            "scatCode": "420",
+            "currentFromDate": "2026-04-01",
+            "effectiveDate": "2026-04-01",
+            "descriptionText": "Lifeboat Station",
+            "listYear": "2026",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties",
+              "enquiry",
+              "businessRatesEstimator"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "draft"
+          }
+        ]
+      },
+      {
+        "uarn": 11905603001,
+        "addressFull": "Mystic shop, Phoenix, Grange Central, Telford, BH1 1HU",
+        "localAuthorityCode": "4720",
+        "localAuthorityReference": "3191322564525",
+        "valuations": [
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 40351392008,
+            "rateableValue": 7300,
+            "scatCode": "249",
+            "currentFromDate": "2019-02-12",
+            "effectiveDate": "2018-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2017",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "previous"
+          },
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 25141561000,
+            "rateableValue": 9300,
+            "scatCode": "249",
+            "currentFromDate": "2023-04-01",
+            "effectiveDate": "2023-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2023",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "check",
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "current"
+          },
+          {
+            "assessmentStatus": "DONE",
+            "assessmentRef": 29775650001,
+            "rateableValue": 159300,
+            "scatCode": "409",
+            "currentFromDate": "2026-04-01",
+            "effectiveDate": "2026-04-01",
+            "descriptionText": "Cafe",
+            "listYear": "2026",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties",
+              "enquiry",
+              "businessRatesEstimator"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "draft"
+          }
+        ]
+      },
+      {
+        "uarn": 11905603002,
+        "addressFull": "Zing & Proud, RODLEY LANE, RODLEY, LEEDS, BH1 1HU",
+        "localAuthorityCode": "4720",
+        "localAuthorityReference": "991322564521",
+        "valuations": [
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 20351392001,
+            "rateableValue": 7300,
+            "scatCode": "249",
+            "currentFromDate": "2019-02-12",
+            "effectiveDate": "2018-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2017",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "previous"
+          },
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 25141561000,
+            "rateableValue": 9300,
+            "scatCode": "249",
+            "currentFromDate": "2023-04-01",
+            "effectiveDate": "2023-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2023",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "check",
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "current"
+          },
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 29775650000,
+            "rateableValue": 879300,
+            "scatCode": "403",
+            "currentFromDate": "2026-04-01",
+            "effectiveDate": "2026-04-01",
+            "descriptionText": "Aquarium",
+            "listYear": "2026",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties",
+              "enquiry",
+              "businessRatesEstimator"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "draft"
+          }
+        ]
+      },
+      {
+        "uarn": 11905603001,
+        "addressFull": "HMRC UK, Phoenix, Grange Central, Telford, BH1 1HU",
+        "localAuthorityCode": "4720",
+        "localAuthorityReference": "191322564521",
+        "valuations": [
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 40351392008,
+            "rateableValue": 7300,
+            "scatCode": "249",
+            "currentFromDate": "2019-02-12",
+            "effectiveDate": "2018-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2017",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "previous"
+          },
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 25141561000,
+            "rateableValue": 9300,
+            "scatCode": "249",
+            "currentFromDate": "2023-04-01",
+            "effectiveDate": "2023-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2023",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "check",
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "current"
+          },
+          {
+            "assessmentStatus": "DONE",
+            "assessmentRef": 29775650001,
+            "rateableValue": 1509300,
+            "scatCode": "401",
+            "currentFromDate": "2026-04-01",
+            "effectiveDate": "2026-04-01",
+            "descriptionText": "Abattoir or Slaughter House (Rental Valuation)",
+            "listYear": "2026",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties",
+              "enquiry",
+              "businessRatesEstimator"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "draft"
+          }
+        ]
+      },
+      {
+        "uarn": 11905603002,
+        "addressFull": "Safe Life UK, RODLEY LANE, RODLEY, LEEDS, BH1 1HU",
+        "localAuthorityCode": "4720",
+        "localAuthorityReference": "2291322564521",
+        "valuations": [
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 20351392001,
+            "rateableValue": 7300,
+            "scatCode": "249",
+            "currentFromDate": "2019-02-12",
+            "effectiveDate": "2018-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2017",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "previous"
+          },
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 25141561000,
+            "rateableValue": 9300,
+            "scatCode": "249",
+            "currentFromDate": "2023-04-01",
+            "effectiveDate": "2023-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2023",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "check",
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "current"
+          },
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 29775650000,
+            "rateableValue": 2069300,
+            "scatCode": "134",
+            "currentFromDate": "2026-04-01",
+            "effectiveDate": "2026-04-01",
+            "descriptionText": "Hospitals & Clinic NHS",
+            "listYear": "2026",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties",
+              "enquiry",
+              "businessRatesEstimator"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "draft"
+          }
+        ]
+      },
+      {
+        "uarn": 11905603001,
+        "addressFull": "Tesco UK, Phoenix, Grange Central, Telford, BH1 1HU",
+        "localAuthorityCode": "4720",
+        "localAuthorityReference": "91322564521",
+        "valuations": [
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 40351392008,
+            "rateableValue": 7300,
+            "scatCode": "249",
+            "currentFromDate": "2019-02-12",
+            "effectiveDate": "2018-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2017",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "previous"
+          },
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 25141561000,
+            "rateableValue": 9300,
+            "scatCode": "249",
+            "currentFromDate": "2023-04-01",
+            "effectiveDate": "2023-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2023",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "check",
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "current"
+          },
+          {
+            "assessmentStatus": "DONE",
+            "assessmentRef": 29775650001,
+            "rateableValue": 999300,
+            "scatCode": "209",
+            "currentFromDate": "2026-04-01",
+            "effectiveDate": "2026-04-01",
+            "descriptionText": "Petrol Filling Station",
+            "listYear": "2026",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties",
+              "enquiry",
+              "businessRatesEstimator"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "draft"
+          }
+        ]
+      },
+      {
+        "uarn": 11905603002,
+        "addressFull": "2A, RODLEY LANE, RODLEY, LEEDS, BH1 1HU",
+        "localAuthorityCode": "4720",
+        "localAuthorityReference": "2291322564521",
+        "valuations": [
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 20351392001,
+            "rateableValue": 7300,
+            "scatCode": "249",
+            "currentFromDate": "2019-02-12",
+            "effectiveDate": "2018-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2017",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "previous"
+          },
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 25141561000,
+            "rateableValue": 9300,
+            "scatCode": "249",
+            "currentFromDate": "2023-04-01",
+            "effectiveDate": "2023-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2023",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "check",
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "current"
+          },
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 29775650000,
+            "rateableValue": 809300,
+            "scatCode": "220",
+            "currentFromDate": "2026-04-01",
+            "effectiveDate": "2026-04-01",
+            "descriptionText": "Prison Service Hereditament",
+            "listYear": "2026",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties",
+              "enquiry",
+              "businessRatesEstimator"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "draft"
+          }
+        ]
+      },
+      {
+        "uarn": 11905603001,
+        "addressFull": "Poundland UK, Phoenix, Grange Central, Telford, BH1 1HU",
+        "localAuthorityCode": "4720",
+        "localAuthorityReference": "3091322564521",
+        "valuations": [
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 40351392008,
+            "rateableValue": 7300,
+            "scatCode": "249",
+            "currentFromDate": "2019-02-12",
+            "effectiveDate": "2018-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2017",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "previous"
+          },
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 25141561000,
+            "rateableValue": 9300,
+            "scatCode": "249",
+            "currentFromDate": "2023-04-01",
+            "effectiveDate": "2023-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2023",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "check",
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "current"
+          },
+          {
+            "assessmentStatus": "DONE",
+            "assessmentRef": 29775650001,
+            "rateableValue": 1899300,
+            "scatCode": "235",
+            "currentFromDate": "2026-04-01",
+            "effectiveDate": "2026-04-01",
+            "descriptionText": "Retail Warehouses Or Foodstore",
+            "listYear": "2026",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties",
+              "enquiry",
+              "businessRatesEstimator"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "draft"
+          }
+        ]
+      },
+      {
+        "uarn": 11905603002,
+        "addressFull": "(INCL STORE R/O 2 & 2A) 2A, RODLEY LANE, RODLEY, LEEDS, BH1 1HU",
+        "localAuthorityCode": "4720",
+        "localAuthorityReference": "1322564521",
+        "valuations": [
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 20351392001,
+            "rateableValue": 7300,
+            "scatCode": "249",
+            "currentFromDate": "2019-02-12",
+            "effectiveDate": "2018-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2017",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "previous"
+          },
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 25141561000,
+            "rateableValue": 9300,
+            "scatCode": "249",
+            "currentFromDate": "2023-04-01",
+            "effectiveDate": "2023-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2023",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "check",
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "current"
+          },
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 29775650000,
+            "rateableValue": 229300,
+            "scatCode": "249",
+            "currentFromDate": "2026-04-01",
+            "effectiveDate": "2026-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2026",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties",
+              "enquiry",
+              "businessRatesEstimator"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "draft"
+          }
+        ]
+      },
+      {
+        "uarn": 11905603001,
+        "addressFull": "NGR UK, Phoenix, Grange Central, Telford, BH1 1HU",
+        "localAuthorityCode": "4720",
+        "localAuthorityReference": "381322564521",
+        "valuations": [
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 40351392008,
+            "rateableValue": 7300,
+            "scatCode": "249",
+            "currentFromDate": "2019-02-12",
+            "effectiveDate": "2018-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2017",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "previous"
+          },
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 25141561000,
+            "rateableValue": 9300,
+            "scatCode": "249",
+            "currentFromDate": "2023-04-01",
+            "effectiveDate": "2023-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2023",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "check",
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "current"
+          },
+          {
+            "assessmentStatus": "DONE",
+            "assessmentRef": 29775650001,
+            "rateableValue": 99009300,
+            "scatCode": "240",
+            "currentFromDate": "2026-04-01",
+            "effectiveDate": "2026-04-01",
+            "descriptionText": "Royal Palace",
+            "listYear": "2026",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties",
+              "enquiry",
+              "businessRatesEstimator"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "draft"
+          }
+        ]
+      },
+      {
+        "uarn": 11905603002,
+        "addressFull": "Zoo LANE, RODLEY, LEEDS, BH1 1HU",
+        "localAuthorityCode": "4720",
+        "localAuthorityReference": "2221322564521",
+        "valuations": [
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 20351392001,
+            "rateableValue": 7300,
+            "scatCode": "249",
+            "currentFromDate": "2019-02-12",
+            "effectiveDate": "2018-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2017",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "previous"
+          },
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 25141561000,
+            "rateableValue": 9300,
+            "scatCode": "249",
+            "currentFromDate": "2023-04-01",
+            "effectiveDate": "2023-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2023",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "check",
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "current"
+          },
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 29775650000,
+            "rateableValue": 1549300,
+            "scatCode": "304",
+            "currentFromDate": "2026-04-01",
+            "effectiveDate": "2026-04-01",
+            "descriptionText": "Zoos & Safari Park",
+            "listYear": "2026",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties",
+              "enquiry",
+              "businessRatesEstimator"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "draft"
+          }
+        ]
+      },
+      {
+        "uarn": 11905603001,
+        "addressFull": "Pests control UK, Phoenix, Grange Central, Telford, BH1 1HU",
+        "localAuthorityCode": "4720",
+        "localAuthorityReference": "7091322564521",
+        "valuations": [
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 40351392008,
+            "rateableValue": 7300,
+            "scatCode": "249",
+            "currentFromDate": "2019-02-12",
+            "effectiveDate": "2018-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2017",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "previous"
+          },
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 25141561000,
+            "rateableValue": 9300,
+            "scatCode": "249",
+            "currentFromDate": "2023-04-01",
+            "effectiveDate": "2023-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2023",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "check",
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "current"
+          },
+          {
+            "assessmentStatus": "DONE",
+            "assessmentRef": 29775650001,
+            "rateableValue": 209300,
+            "scatCode": "730",
+            "currentFromDate": "2026-04-01",
+            "effectiveDate": "2026-04-01",
+            "descriptionText": "Biomass Biological (Crop And Slurry Based Anaerobic Digesters, Including Gas To Grid)",
+            "listYear": "2026",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties",
+              "enquiry",
+              "businessRatesEstimator"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "draft"
+          }
+        ]
+      },
+      {
+        "uarn": 11905603002,
+        "addressFull": "2A, RODLEY LANE, RODLEY, LEEDS, BH1 1HU",
+        "localAuthorityCode": "4720",
+        "localAuthorityReference": "31322564521",
+        "valuations": [
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 20351392001,
+            "rateableValue": 7300,
+            "scatCode": "249",
+            "currentFromDate": "2019-02-12",
+            "effectiveDate": "2018-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2017",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "previous"
+          },
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 25141561000,
+            "rateableValue": 9300,
+            "scatCode": "249",
+            "currentFromDate": "2023-04-01",
+            "effectiveDate": "2023-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2023",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "check",
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "current"
+          },
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 29775650000,
+            "rateableValue": 39300,
+            "scatCode": "721",
+            "currentFromDate": "2026-04-01",
+            "effectiveDate": "2026-04-01",
+            "descriptionText": "Self Storage Facility",
+            "listYear": "2026",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties",
+              "enquiry",
+              "businessRatesEstimator"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "draft"
+          }
+        ]
+      },
+      {
+        "uarn": 11905603001,
+        "addressFull": "Window Cleaning UK, Phoenix, Grange Central, Telford, BH1 1HU",
+        "localAuthorityCode": "4720",
+        "localAuthorityReference": "3225645212191",
+        "valuations": [
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 40351392008,
+            "rateableValue": 7300,
+            "scatCode": "249",
+            "currentFromDate": "2019-02-12",
+            "effectiveDate": "2018-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2017",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "previous"
+          },
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 25141561000,
+            "rateableValue": 9300,
+            "scatCode": "249",
+            "currentFromDate": "2023-04-01",
+            "effectiveDate": "2023-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2023",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "check",
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "current"
+          },
+          {
+            "assessmentStatus": "DONE",
+            "assessmentRef": 29775650001,
+            "rateableValue": 359300,
+            "scatCode": "1006",
+            "currentFromDate": "2026-04-01",
+            "effectiveDate": "2026-04-01",
+            "descriptionText": "Industry - Other Sub-sector",
+            "listYear": "2026",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties",
+              "enquiry",
+              "businessRatesEstimator"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "draft"
+          }
+        ]
+      },
+      {
+        "uarn": 11905603002,
+        "addressFull": "Police station, RODLEY LANE, RODLEY, LEEDS, BH1 1HU",
+        "localAuthorityCode": "4720",
+        "localAuthorityReference": "4521219132256",
+        "valuations": [
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 20351392001,
+            "rateableValue": 7300,
+            "scatCode": "249",
+            "currentFromDate": "2019-02-12",
+            "effectiveDate": "2018-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2017",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "previous"
+          },
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 25141561000,
+            "rateableValue": 9300,
+            "scatCode": "249",
+            "currentFromDate": "2023-04-01",
+            "effectiveDate": "2023-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2023",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "check",
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "current"
+          },
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 29775650000,
+            "rateableValue": 1349300,
+            "scatCode": "215",
+            "currentFromDate": "2026-04-01",
+            "effectiveDate": "2026-04-01",
+            "descriptionText": "Police Station",
+            "listYear": "2026",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties",
+              "enquiry",
+              "businessRatesEstimator"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "draft"
+          }
+        ]
+      },
+      {
+        "uarn": 11905603001,
+        "addressFull": "Defect resolved UK, Phoenix, Grange Central, Telford, BH1 1HU",
+        "localAuthorityCode": "4720",
+        "localAuthorityReference": "6452121913225",
+        "valuations": [
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 40351392008,
+            "rateableValue": 7300,
+            "scatCode": "249",
+            "currentFromDate": "2019-02-12",
+            "effectiveDate": "2018-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2017",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "previous"
+          },
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 25141561000,
+            "rateableValue": 9300,
+            "scatCode": "249",
+            "currentFromDate": "2023-04-01",
+            "effectiveDate": "2023-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2023",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "check",
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "current"
+          },
+          {
+            "assessmentStatus": "DONE",
+            "assessmentRef": 29775650001,
+            "rateableValue": 69300,
+            "scatCode": "246",
+            "currentFromDate": "2026-04-01",
+            "effectiveDate": "2026-04-01",
+            "descriptionText": "Sewage Works",
+            "listYear": "2026",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties",
+              "enquiry",
+              "businessRatesEstimator"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "draft"
+          }
+        ]
+      },
+      {
+        "uarn": 11905603002,
+        "addressFull": "Sports UK, RODLEY, LEEDS, BH1 1HU",
+        "localAuthorityCode": "4720",
+        "localAuthorityReference": "1322564521921",
+        "valuations": [
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 20351392001,
+            "rateableValue": 7300,
+            "scatCode": "249",
+            "currentFromDate": "2019-02-12",
+            "effectiveDate": "2018-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2017",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "previous"
+          },
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 25141561000,
+            "rateableValue": 9300,
+            "scatCode": "249",
+            "currentFromDate": "2023-04-01",
+            "effectiveDate": "2023-04-01",
+            "descriptionText": "SHOP AND PREMISES",
+            "listYear": "2023",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "check",
+              "challenge",
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "current"
+          },
+          {
+            "assessmentStatus": "CURRENT",
+            "assessmentRef": 29775650000,
+            "rateableValue": 9300,
+            "scatCode": "262",
+            "currentFromDate": "2026-04-01",
+            "effectiveDate": "2026-04-01",
+            "descriptionText": "Sports Stadium",
+            "listYear": "2026",
+            "primaryDescription": "CS",
+            "allowedActions": [
+              "viewDetailedValuation",
+              "propertyLink",
+              "similarProperties",
+              "enquiry",
+              "businessRatesEstimator"
+            ],
+            "propertyLinkEarliestStartDate": "2017-04-01",
+            "listType": "draft"
+          }
+        ]
+      }
+    ]
+  }
+}

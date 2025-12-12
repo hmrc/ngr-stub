@@ -1,0 +1,9 @@
+{
+  "_id": "/ngr-stub/external-ndr-list-api/properties?postcode=LS1",
+  "method": "GET",
+  "status": 404,
+  "response": {
+    "total": 0,
+    "properties": []
+  }
+}

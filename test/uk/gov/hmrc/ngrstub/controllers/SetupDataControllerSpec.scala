@@ -21,9 +21,8 @@ import mocks.MockDataService
 import play.api.http.Status
 import play.api.libs.json.Json
 import play.api.test.FakeRequest
-import play.api.test.Helpers.status
+import play.api.test.Helpers.{defaultAwaitTimeout, status}
 import uk.gov.hmrc.ngrstub.models.DataModel
-import play.api.test.Helpers.defaultAwaitTimeout
 
 
 class SetupDataControllerSpec extends TestSupport with MockDataService {
@@ -85,6 +84,26 @@ class SetupDataControllerSpec extends TestSupport with MockDataService {
           lazy val result = TestSetupDataController.removeData("someUrl")(request)
 
           mockRemoveById(errorDeleteResult)
+
+          status(result) shouldBe Status.INTERNAL_SERVER_ERROR
+        }
+      }
+
+      "SetupDataController.populateAllData" should {
+        "return Status OK (200) on successful insertion of all stubbed data" in {
+          lazy val request = FakeRequest()
+          lazy val result = TestSetupDataController.populateAllData()(request)
+
+          mockAddMany(successManyWriteResult)
+
+          status(result) shouldBe Status.OK
+        }
+
+        "return Status InternalServerError (500) on unsuccessful insertion of all stubbed data" in {
+          lazy val request = FakeRequest()
+          lazy val result = TestSetupDataController.populateAllData()(request)
+
+          mockAddMany(errorManyWriteResult)
 
           status(result) shouldBe Status.INTERNAL_SERVER_ERROR
         }

@@ -93,6 +93,11 @@ class DataServiceSpec extends TestSupport with DefaultPlayMongoRepositorySupport
       result.wasAcknowledged() shouldBe true
     }
 
+    "insert a given documents" in {
+      val result = await(service.addMany(Seq(dataModel, dataModel.copy(_id = "/test2"))))
+      result.wasAcknowledged() shouldBe true
+    }
+
     "contain a DataRepository" in {
       service.repository.getClass shouldBe repository.getClass
     }
